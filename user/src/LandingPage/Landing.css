@@ -1,0 +1,18 @@
+.scroll_hidden {
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scroll_hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.underline_animation::after {
+  @apply content-[""] bg-white h-[0.2rem] mx-3 w-[0%] left-5 bottom-5 rounded-xl absolute 
+    duration-300;
+}
+
+.underline_animation:hover::after {
+  @apply w-[80%];
+}
