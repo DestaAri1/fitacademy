@@ -3,12 +3,27 @@ import { Card, CardBody, Typography } from "@material-tailwind/react";
 import { Fragment } from "react";
 import "./Landing.css";
 import Silang from "../assets/image_landing/silang.svg";
+import axios from "axios";
 
 function Landing() {
   const [showModal, setShowModal] = useState(false);
   const [jenis, setJenis] = useState("");
+  const [email, setEmail] = useState("");
 
   console.log(jenis);
+  console.log(email);
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    const post = { jenis: jenis, email: email };
+    try {
+      const res = await axios.post("http://127.0.0.1:8000/api/email", post);
+      alert("success");
+      console.log(res.data);
+    } catch (e) {
+      alert(e);
+    }
+  };
 
   const clickModal = (r) => {
     setJenis(r);
@@ -18,7 +33,7 @@ function Landing() {
   return (
     <Fragment>
       <div className="lg:grid lg:grid-cols-2">
-        <div className="border-4 border-yellow-400 lg:w-1/2 lg:fixed">
+        <div className="lg:w-1/2 lg:fixed">
           {/* nav bar */}
           <header className="">
             <nav className="flex flex-row">
@@ -58,7 +73,7 @@ function Landing() {
           <h4 className="hidden lg:block ml-[5.5rem] mt-6 mb-5 text-[#3F3F3F] text-xs font-poppins">Copyright © 2023 FitAcademy. All rights reserved.</h4>
         </div>
         {/* konten kanan */}
-        <div className="static mx-10 my-20 border-4 border-red-300 lg:my-0 lg:mx-0 lg:py-32 lg:absolute right-32 scroll_hidden">
+        <div className="static mx-10 my-20 lg:my-0 lg:mx-0 lg:py-32 lg:absolute right-32 scroll_hidden">
           {/* Card Perusahaan */}
           <div onClick={() => clickModal("perusahaan")} className="cursor-pointer group">
             <Card variant="gradient" className="text-[#DDDDDD] rounded-none lg:h-[28rem] max-w-[30rem] mx-auto bg-fitinline-orange p-8">
@@ -139,10 +154,14 @@ function Landing() {
                       <div className="mt-16 text-lg font-semibold text-white mx-14 lg:ml-20 font-poppins lg:text-xl">
                         <h2 className="text-center lg:text-left">DAPATKAN E-BOOK LENGKAP INI SECARA GRATIS!</h2>
                       </div>
-                      <form className="mb-14" action="">
+                      <form className="mb-14" action="post" onSubmit={onSubmit}>
                         <div className="flex flex-row mt-4 mb-6 mx-14 lg:mx-20">
-                          <input type="hidden" name="jenis" id="jenis" value="perusahaan" />
+                          {/* <input type="hidden" name="jenis" id="jenis" value="perusahaan" /> */}
                           <input
+                            onChange={(event) => {
+                              setEmail(event.target.value);
+                            }}
+                            value={email}
                             type="email"
                             id="email"
                             name="email"
@@ -190,10 +209,14 @@ function Landing() {
                       <div className="mt-16 text-lg font-semibold text-white mx-14 lg:ml-20 font-poppins lg:text-xl">
                         <h2 className="text-center lg:text-left">DAPATKAN E-BOOK LENGKAP INI SECARA GRATIS!</h2>
                       </div>
-                      <form className="mb-14" action="">
+                      <form className="mb-14" action="post" onSubmit={onSubmit}>
                         <div className="flex flex-row mt-4 mb-6 mx-14 lg:mx-20">
                           <input type="hidden" name="jenis" id="jenis" value="perusahaan" />
                           <input
+                            onChange={(event) => {
+                              setEmail(event.target.value);
+                            }}
+                            value={email}
                             type="email"
                             id="email"
                             name="email"
@@ -241,10 +264,14 @@ function Landing() {
                       <div className="mt-16 text-lg font-semibold text-white mx-14 lg:ml-20 font-poppins lg:text-xl">
                         <h2 className="text-center lg:text-left">DAPATKAN E-BOOK LENGKAP INI SECARA GRATIS!</h2>
                       </div>
-                      <form className="mb-14" action="">
+                      <form className="mb-14" action="post" onSubmit={onSubmit}>
                         <div className="flex flex-row mt-4 mb-6 mx-14 lg:mx-20">
                           <input type="hidden" name="jenis" id="jenis" value="perusahaan" />
                           <input
+                            onChange={(event) => {
+                              setEmail(event.target.value);
+                            }}
+                            value={email}
                             type="email"
                             id="email"
                             name="email"
