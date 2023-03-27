@@ -17,7 +17,7 @@ function Landing() {
     e.preventDefault();
     const post = { jenis: jenis, email: email };
     try {
-      const res = await axios.post("http://127.0.0.1:8000/api/email", post);
+      const res = await axios.post("http://admin.fitacademy.id:8000/api/email", post);
       alert("success");
       console.log(res.data);
     } catch (e) {
