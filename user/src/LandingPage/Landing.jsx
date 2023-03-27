@@ -16,14 +16,14 @@ function Landing() {
   };
 
   return (
-    <>
+    <Fragment>
       <div className="lg:grid lg:grid-cols-2">
         <div className="border-4 border-yellow-400 lg:w-1/2 lg:fixed">
           {/* nav bar */}
           <header className="">
             <nav className="flex flex-row">
               <div className="flex">
-                <img className="ml-9 lg:ml-20 w-12 lg:w-16" src="image_landing/Fit-Academy-Logo.png" alt="" />
+                <img className="w-12 ml-9 lg:ml-20 lg:w-16" src="image_landing/Fit-Academy-Logo.png" alt="" />
                 <h1 className="hidden lg:block font-nunito self-center ml-5 text-[#EB8A3A] font-semibold text-xl">fitacademy.id</h1>
               </div>
               <div className="self-center justify-end">
@@ -58,41 +58,41 @@ function Landing() {
           <h4 className="hidden lg:block ml-[5.5rem] mt-6 mb-5 text-[#3F3F3F] text-xs font-poppins">Copyright © 2023 FitAcademy. All rights reserved.</h4>
         </div>
         {/* konten kanan */}
-        <div className="my-20 lg:my-0 mx-10 lg:mx-0 lg:py-32 static lg:absolute right-32 scroll_hidden border-4 border-red-300">
+        <div className="static mx-10 my-20 border-4 border-red-300 lg:my-0 lg:mx-0 lg:py-32 lg:absolute right-32 scroll_hidden">
           {/* Card Perusahaan */}
-          <div onClick={() => clickModal("perusahaan")} className="group cursor-pointer">
+          <div onClick={() => clickModal("perusahaan")} className="cursor-pointer group">
             <Card variant="gradient" className="text-[#DDDDDD] rounded-none lg:h-[28rem] max-w-[30rem] mx-auto bg-fitinline-orange p-8">
               <CardBody className="p-0">
-                <Typography className="font-semibold font-poppins text-xl">Perusahaan</Typography>
+                <Typography className="text-xl font-semibold font-poppins">Perusahaan</Typography>
                 <img className="w-[30rem]" src="image_landing/cover-1.png" alt="" />
-                <Typography className="font-poppins text-xl text-white hidden lg:group-hover:block">
-                  <a className="underline_animation font-semibold">CAREER PATH:</a> Sukses Menjadi Seorang Copywriter
+                <Typography className="hidden text-xl text-white font-poppins lg:group-hover:block">
+                  <a className="font-semibold underline_animation">CAREER PATH:</a> Sukses Menjadi Seorang Copywriter
                 </Typography>
               </CardBody>
             </Card>
           </div>
 
           {/* Card Konten Kreator */}
-          <div onClick={() => clickModal("kontenKreator")} className="group cursor-pointer">
+          <div onClick={() => clickModal("kontenKreator")} className="cursor-pointer group">
             <Card variant="gradient" className="text-[#DDDDDD] rounded-none lg:h-[30rem] max-w-[30rem] mx-auto bg-fitinline-orange p-8 my-16">
               <CardBody className="p-0">
-                <Typography className="font-semibold font-poppins text-xl">Konten Kreator</Typography>
+                <Typography className="text-xl font-semibold font-poppins">Konten Kreator</Typography>
                 <img className="w-[30rem]" src="image_landing/cover-2.png" alt="" />
-                <Typography className="font-poppins text-xl text-white hidden lg:group-hover:block">
-                  <a className="underline_animation font-semibold">CONTENT CREATOR GUIDE: </a>Asik Mengedukasi dengan Metode Microlearning
+                <Typography className="hidden text-xl text-white font-poppins lg:group-hover:block">
+                  <a className="font-semibold underline_animation">CONTENT CREATOR GUIDE: </a>Asik Mengedukasi dengan Metode Microlearning
                 </Typography>
               </CardBody>
             </Card>
           </div>
 
           {/* Card Anak Muda */}
-          <div onClick={() => clickModal("anakMuda")} className="group cursor-pointer">
+          <div onClick={() => clickModal("anakMuda")} className="cursor-pointer group">
             <Card variant="gradient" className="text-[#DDDDDD] rounded-none lg:h-[28rem] max-w-[30rem] mx-auto bg-fitinline-orange p-8">
               <CardBody className="p-0">
-                <Typography className="font-semibold font-poppins text-xl">Anak Muda</Typography>
+                <Typography className="text-xl font-semibold font-poppins">Anak Muda</Typography>
                 <img className="w-[30rem]" src="image_landing/cover-3.png" alt="" />
-                <Typography className="font-poppins text-xl text-white hidden lg:group-hover:block">
-                  <a className="underline_animation font-semibold">CAREER PATH: </a>Sukses Menjadi Seorang Copywriter
+                <Typography className="hidden text-xl text-white font-poppins lg:group-hover:block">
+                  <a className="font-semibold underline_animation">CAREER PATH: </a>Sukses Menjadi Seorang Copywriter
                 </Typography>
               </CardBody>
             </Card>
@@ -113,13 +113,13 @@ function Landing() {
         <div className="bg-[#21396B] absolute w-[78%] lg:w-1/2 h-[55rem] lg:h-1/2 lg:fixed left-24 lg:left-1/2 -bottom-[50rem] lg:bottom-0 -z-10"></div>
         {showModal && jenis === "perusahaan" ? (
           <>
-            <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50">
+            <div className="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto">
               <div className="relative w-auto h-full">
                 {/*content*/}
-                <div className="border-2 border-yellow-300 relative flex flex-col w-full h-fit bg-white">
+                <div className="relative flex flex-col w-full bg-white border-2 border-yellow-300 h-fit">
                   {/*body*/}
-                  <div className=" grid lg:grid-cols-2 font-poppins">
-                    <div className="order-last lg:order-first my-20 lg:mt-32 mx-14 lg:ml-24 lg:mr-20">
+                  <div className="grid  lg:grid-cols-2 font-poppins">
+                    <div className="order-last my-20 lg:order-first lg:mt-32 mx-14 lg:ml-24 lg:mr-20">
                       <h1 className="font-medium text-2xl lg:text-4xl text-[#EB8A3A]">
                         <b>EMPLOYEE 101:</b> Cara Ampuh dan Efektif Meningkatkan Kinerja Karyawan
                       </h1>
@@ -133,14 +133,14 @@ function Landing() {
                     </div>
 
                     <div className="bg-[#21396B] flex flex-col">
-                      <img onClick={() => setShowModal(false)} src={Silang} className="cursor-pointer self-end p-10 pb-0 w-32" alt="" />
+                      <img onClick={() => setShowModal(false)} src={Silang} className="self-end w-32 p-10 pb-0 cursor-pointer" alt="" />
 
                       <img className="w-[40rem] mx-auto" src="image_landing/cover-1.png" alt="" />
-                      <div className="mx-14 lg:ml-20 mt-16 font-poppins text-white font-semibold text-lg lg:text-xl">
+                      <div className="mt-16 text-lg font-semibold text-white mx-14 lg:ml-20 font-poppins lg:text-xl">
                         <h2 className="text-center lg:text-left">DAPATKAN E-BOOK LENGKAP INI SECARA GRATIS!</h2>
                       </div>
                       <form className="mb-14" action="">
-                        <div className="mx-14 lg:mx-20 flex flex-row mt-4 mb-6">
+                        <div className="flex flex-row mt-4 mb-6 mx-14 lg:mx-20">
                           <input type="hidden" name="jenis" id="jenis" value="perusahaan" />
                           <input
                             type="email"
@@ -160,17 +160,17 @@ function Landing() {
                 </div>
               </div>
             </div>
-            <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+            <div className="fixed inset-0 z-40 bg-black opacity-25"></div>
           </>
         ) : showModal && jenis === "kontenKreator" ? (
           <>
-            <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50">
+            <div className="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto">
               <div className="relative w-auto h-full">
                 {/*content*/}
-                <div className="border-2 border-yellow-300 relative flex flex-col w-full h-fit bg-white">
+                <div className="relative flex flex-col w-full bg-white border-2 border-yellow-300 h-fit">
                   {/*body*/}
-                  <div className=" grid lg:grid-cols-2 font-poppins">
-                    <div className="order-last lg:order-first my-20 lg:mt-32 mx-14 lg:ml-24 lg:mr-20">
+                  <div className="grid  lg:grid-cols-2 font-poppins">
+                    <div className="order-last my-20 lg:order-first lg:mt-32 mx-14 lg:ml-24 lg:mr-20">
                       <h1 className="font-medium text-2xl lg:text-4xl text-[#EB8A3A]">
                         <b>CONTENT CREATOR GUIDE:</b> Asik Mengedukasi dengan Metode Microlearning
                       </h1>
@@ -184,14 +184,14 @@ function Landing() {
                     </div>
 
                     <div className="bg-[#21396B] flex flex-col">
-                      <img onClick={() => setShowModal(false)} src={Silang} className="cursor-pointer self-end p-10 pb-0 w-32" alt="" />
+                      <img onClick={() => setShowModal(false)} src={Silang} className="self-end w-32 p-10 pb-0 cursor-pointer" alt="" />
 
                       <img className="w-[40rem] mx-auto" src="image_landing/cover-2.png" alt="" />
-                      <div className="mx-14 lg:ml-20 mt-16 font-poppins text-white font-semibold text-lg lg:text-xl">
+                      <div className="mt-16 text-lg font-semibold text-white mx-14 lg:ml-20 font-poppins lg:text-xl">
                         <h2 className="text-center lg:text-left">DAPATKAN E-BOOK LENGKAP INI SECARA GRATIS!</h2>
                       </div>
                       <form className="mb-14" action="">
-                        <div className="mx-14 lg:mx-20 flex flex-row mt-4 mb-6">
+                        <div className="flex flex-row mt-4 mb-6 mx-14 lg:mx-20">
                           <input type="hidden" name="jenis" id="jenis" value="perusahaan" />
                           <input
                             type="email"
@@ -211,17 +211,17 @@ function Landing() {
                 </div>
               </div>
             </div>
-            <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+            <div className="fixed inset-0 z-40 bg-black opacity-25"></div>
           </>
         ) : showModal && jenis === "anakMuda" ? (
           <>
-            <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50">
+            <div className="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto">
               <div className="relative w-auto h-full">
                 {/*content*/}
-                <div className="border-2 border-yellow-300 relative flex flex-col w-full h-fit bg-white">
+                <div className="relative flex flex-col w-full bg-white border-2 border-yellow-300 h-fit">
                   {/*body*/}
-                  <div className=" grid lg:grid-cols-2 font-poppins">
-                    <div className="order-last lg:order-first my-20 lg:mt-32 mx-14 lg:ml-24 lg:mr-20">
+                  <div className="grid  lg:grid-cols-2 font-poppins">
+                    <div className="order-last my-20 lg:order-first lg:mt-32 mx-14 lg:ml-24 lg:mr-20">
                       <h1 className="font-medium text-2xl lg:text-4xl text-[#EB8A3A]">
                         <b>CAREER PATH:</b> Sukses Menjadi Seorang Copywriter
                       </h1>
@@ -235,14 +235,14 @@ function Landing() {
                     </div>
 
                     <div className="bg-[#21396B] flex flex-col">
-                      <img onClick={() => setShowModal(false)} src={Silang} className="cursor-pointer self-end p-10 pb-0 w-32" alt="" />
+                      <img onClick={() => setShowModal(false)} src={Silang} className="self-end w-32 p-10 pb-0 cursor-pointer" alt="" />
 
                       <img className="w-[40rem] mx-auto" src="image_landing/cover-3.png" alt="" />
-                      <div className="mx-14 lg:ml-20 mt-16 font-poppins text-white font-semibold text-lg lg:text-xl">
+                      <div className="mt-16 text-lg font-semibold text-white mx-14 lg:ml-20 font-poppins lg:text-xl">
                         <h2 className="text-center lg:text-left">DAPATKAN E-BOOK LENGKAP INI SECARA GRATIS!</h2>
                       </div>
                       <form className="mb-14" action="">
-                        <div className="mx-14 lg:mx-20 flex flex-row mt-4 mb-6">
+                        <div className="flex flex-row mt-4 mb-6 mx-14 lg:mx-20">
                           <input type="hidden" name="jenis" id="jenis" value="perusahaan" />
                           <input
                             type="email"
@@ -262,11 +262,11 @@ function Landing() {
                 </div>
               </div>
             </div>
-            <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+            <div className="fixed inset-0 z-40 bg-black opacity-25"></div>
           </>
         ) : null}
       </div>
-    </>
+    </Fragment>
   );
 }
 
